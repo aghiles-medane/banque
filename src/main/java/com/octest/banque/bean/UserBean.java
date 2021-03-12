@@ -3,11 +3,13 @@ package com.octest.banque.bean;
 
 
 
-public class UserBean {
+public class UserBean extends BaseBean {
     //login et mot de passe d'un client
 	private String login;
 	private String password;
 	private String confirmPassword;
+	private long roleId;
+
 	//une instance de client
 	private CustomerBean customer;
 	
@@ -46,6 +48,27 @@ public class UserBean {
 	
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+	
+	public long getRoleId() {
+		return roleId;
+	}
+
+	/**
+	 * @param Role
+	 *            Id To set User ROle Id
+	 */
+	public void setRoleId(long roleId) {
+		this.roleId = roleId;
+	}
+
+
+	public String getKey() {
+		return id + "";
+	}
+
+	public String getValue() {
+		return login;
 	}
 
 	

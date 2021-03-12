@@ -21,6 +21,8 @@ public class LoginCtl extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/LoginView.jsp").forward(request,response);
+
 		
 	}
 

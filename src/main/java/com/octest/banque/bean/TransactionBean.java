@@ -2,7 +2,7 @@ package com.octest.banque.bean;
 
 import java.util.Date;
 
-public class TransactionBean {
+public class TransactionBean extends BaseBean {
 	
 	// transaction id
 	private long trasactionId;
@@ -16,6 +16,7 @@ public class TransactionBean {
 	private String description;
 	//
 	private long toAccountNo;
+	//
 	private long fromAccountNo;
 	
 
@@ -73,6 +74,16 @@ public class TransactionBean {
 
 	public void setFromAccountNo(long fromAccountNo) {
 		this.fromAccountNo = fromAccountNo;
+	}
+
+	public String getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
