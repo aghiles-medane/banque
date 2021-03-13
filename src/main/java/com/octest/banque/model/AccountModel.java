@@ -2,29 +2,31 @@ package com.octest.banque.model;
 
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-/**
- * JDBC Implementation of AccountModel
- * 
- */
+import org.apache.log4j.Logger;
+
+import  com.octest.banque.bean.AccountBean;
+import  com.octest.banque.exception.ApplicationException;
+import  com.octest.banque.exception.DatabaseException;
+import  com.octest.banque.exception.DuplicateRecordException;
+import  com.octest.banque.util.JDBCDataSource;
+
 public class AccountModel {
+	
+	//utiliser pour creer ou verifier un logger
 	private static Logger log = Logger.getLogger(AccountModel.class);
 
-	/**
-	 * NextPk a Account
-	 * 
-	 * @param bean
-	 * @throws DatabaseException
-	 * 
-	 */
 	public Integer nextPK() throws DatabaseException {
 		log.debug("Model nextPK Started");
 		Connection conn = null;
 		int pk = 0;
 		try {
-			// connection a la base de données
 			conn = JDBCDataSource.getConnection();
-			//utilisation des preapared statement pour faire la requet qui est la selection de l'id max d'un compte
 			PreparedStatement pstmt = conn.prepareStatement("SELECT MAX(ID) FROM Account");
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
@@ -41,29 +43,22 @@ public class AccountModel {
 		return pk + 1;
 	}
 
-	/**
-	 * Add a Account
-	 * 
-	 * @param bean
-	 * @throws DatabaseException
-	 * 
-	 */
 	public long add(AccountBean bean) throws ApplicationException, DuplicateRecordException {
 		Connection conn = null;
 		int pk = 0;
 
 		AccountBean beanExist = findByAccountNo(bean.getAcc_No());
+	    // Check if create Role already exist
 		if (beanExist != null ) {
 			throw new DuplicateRecordException("Account is already exist");
 		}
 
 		try {
-			//etablir la coonection avec la BD
 			conn = JDBCDataSource.getConnection();
 			pk = nextPK();
-			//nouvelle transaction après chaque validation.
+			// Get auto-generated next primary key
+		      System.out.println(pk + " in ModelJDBC");
 			conn.setAutoCommit(false);
-			// prepared statement pour faire une requet :inserer des valeur dans le compte
 			PreparedStatement pstmt = conn.prepareStatement("INSERT INTO Account VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 			pstmt.setInt(1, pk);
 			pstmt.setLong(2, bean.getAcc_No());
@@ -95,13 +90,6 @@ public class AccountModel {
 		return pk;
 	}
 
-	/**
-	 * Delete a Account
-	 * 
-	 * @param bean
-	 * @throws DatabaseException
-	 * 
-	 */
 	public void delete(AccountBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -128,14 +116,6 @@ public class AccountModel {
 
 	}
 
-	/**
-	 * Find Account by Name
-	 * 
-	 * @param login
-	 *            : get parameter
-	 * @return bean
-	 * @throws DatabaseException
-	 */
 	public AccountBean findByName(String name) throws ApplicationException {
 		log.debug("Model findByLogin Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Account WHERE NAME=?");
@@ -172,14 +152,6 @@ public class AccountModel {
 		return bean;
 	}
 
-	/**
-	 * Find Account by Pk
-	 * 
-	 * @param login
-	 *            : get parameter
-	 * @return bean
-	 * @throws DatabaseException
-	 */
 	public AccountBean findByPK(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Account WHERE ID=?");
@@ -217,14 +189,6 @@ public class AccountModel {
 		return bean;
 	}
 	
-	/**
-	 * Find Account by AccountNo
-	 * 
-	 * @param login
-	 *            : get parameter
-	 * @return bean
-	 * @throws DatabaseException
-	 */
 	public AccountBean findByAccountNo(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Account WHERE Acc_No=?");
@@ -261,16 +225,13 @@ public class AccountModel {
 		log.debug("Model findByPK End");
 		return bean;
 	}
-	
 	/**
-	 * Find Account by UserId
-	 * 
-	 * @param login
-	 *            : get parameter
-	 * @return bean
-	 * @throws DatabaseException
-	 */
-
+	   * Find Role by PK
+	   *
+	   * @param pk : get parameter
+	   * @return bean
+	   * @throws DatabaseException
+	   */
 	public AccountBean findByUserId(long userId) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Account WHERE USerID=?");
@@ -308,12 +269,6 @@ public class AccountModel {
 		return bean;
 	}
 
-	/**
-	 * Update a Account
-	 * 
-	 * @param bean
-	 * @throws DatabaseException
-	 */
 	public void update(AccountBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model update Started");
 		Connection conn = null;
@@ -358,30 +313,10 @@ public class AccountModel {
 		log.debug("Model update End");
 	}
 
-	/**
-	 * Search Account
-	 * 
-	 * @param bean
-	 *            : Search Parameters
-	 * @throws DatabaseException
-	 */
 	public List search(AccountBean bean) throws ApplicationException {
 		return search(bean, 0, 0);
 	}
 
-	/**
-	 * Search Account with pagination
-	 * 
-	 * @return list : List of Users
-	 * @param bean
-	 *            : Search Parameters
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
-	 * 
-	 * @throws DatabaseException
-	 */
 	public List search(AccountBean bean, int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model search Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Account WHERE 1=1");
@@ -395,7 +330,9 @@ public class AccountModel {
 				sql.append(" AND ACC_NO = " + bean.getAcc_No());
 			}
 		}
+	    // if page size is greater than zero then apply pagination
 		if (pageSize > 0) {
+		      // Calculate start record index
 			pageNo = (pageNo - 1) * pageSize;
 			sql.append(" Limit " + pageNo + ", " + pageSize);
 		}
@@ -431,32 +368,18 @@ public class AccountModel {
 		log.debug("Model search End");
 		return list;
 	}
-	
-	/**
-	 * Get List of Account
-	 * 
-	 * @return list : List of User
-	 * @throws DatabaseException
-	 */
+
 	public List list() throws ApplicationException {
 		return list(0, 0);
 	}
 
-	/**
-	 * Get List of Account with pagination
-	 * 
-	 * @return list : List of users
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
-	 * @throws DatabaseException
-	 */
 	public List list(int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model list Started");
 		ArrayList list = new ArrayList();
 		StringBuffer sql = new StringBuffer("select * from Account");
+		// if page size is greater than zero then apply pagination
 		if (pageSize > 0) {
+			// Calculate start record index
 			pageNo = (pageNo - 1) * pageSize;
 			sql.append(" limit " + pageNo + "," + pageSize);
 		}
@@ -493,4 +416,3 @@ public class AccountModel {
 	}
 
 }
-

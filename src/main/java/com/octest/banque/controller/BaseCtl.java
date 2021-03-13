@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import in.co.banking.system.bean.BaseBean;
-import in.co.banking.system.bean.UserBean;
-import in.co.banking.system.ctl.BaseCtl;
-import in.co.banking.system.util.DataUtility;
-import in.co.banking.system.util.DataValidator;
-import in.co.banking.system.util.ServletUtility;
+import com.octest.banque.bean.BaseBean;
+import com.octest.banque.bean.UserBean;
+import com.octest.banque.controller.BaseCtl;
+import com.octest.banque.util.DataUtility;
+import com.octest.banque.util.DataValidator;
+import com.octest.banque.util.ServletUtility;
 
 /**
  * Servlet implementation class BaseCtl

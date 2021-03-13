@@ -1,46 +1,44 @@
 package com.octest.banque.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class WelcomeCtl
- */
-@WebServlet("/WelcomeCtl")
-public class WelcomeCtl extends HttpServlet {
+import com.octest.banque.util.DataUtility;
+import com.octest.banque.util.ServletUtility;
 
+
+
+
+@WebServlet(name = "WelcomeCtl", urlPatterns = { "/WelcomeCtl" })
+public class WelcomeCtl extends BaseCtl {
 
 	private static final long serialVersionUID = 1L;
 
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public WelcomeCtl() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 
 	
-    
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/Welcome.jsp").forward(request, response);
-		
-		
+		String page = DataUtility.getString(request.getParameter("page"));
+
+		if (page != null) {
+			response.sendRedirect(page);
+			return;
+		}
+
+		ServletUtility.forward(BSView.WELCOME_VIEW, request, response);
+
 	}
 
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-		
+	@Override
+	protected String getView() {
+		// TODO Auto-generated method stub
+		return BSView.WELCOME_VIEW;
 	}
-
 
 }

@@ -1,5 +1,19 @@
 package com.octest.banque.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.octest.banque.bean.CustomerBean;
+import com.octest.banque.exception.ApplicationException;
+import com.octest.banque.exception.DatabaseException;
+import com.octest.banque.exception.DuplicateRecordException;
+import com.octest.banque.util.JDBCDataSource;
+
 public class CustomerModel {
 private static Logger log = Logger.getLogger(CustomerModel.class);
 	

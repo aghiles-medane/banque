@@ -2,12 +2,6 @@ package com.octest.banque.util;
 
 
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
-import com.mchange.v2.c3p0.ComboPooledDataSource;
-
-//import in.co.banking.system.exception.ApplicationException;
 
 
 
@@ -90,7 +84,14 @@ public class JDBCDataSource
         }
     }
 
-    
-        
-    
+    public static void trnRollback(Connection connection)
+            throws ApplicationException {
+        if (connection != null) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                throw new ApplicationException(ex.toString());
+            }
+        }
+    }
 }

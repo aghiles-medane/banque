@@ -8,6 +8,7 @@
 <title>systeme de gestion de compte bancaire</title>
 <body>
 </head>
+<%@ include file="Header.jsp" %>
 
 <br>
  <nav
@@ -29,6 +30,7 @@
 		</div>
 	</div>
 <div style="margin-top: 289px">
+<%@ include file="Footer.jsp" %>
 
 </div>
 </body>
