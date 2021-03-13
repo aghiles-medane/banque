@@ -1,5 +1,5 @@
 package com.octest.banque.model;
 
-public class BenificiaryModel {
+public class BeneficiaryModel {
 
 }

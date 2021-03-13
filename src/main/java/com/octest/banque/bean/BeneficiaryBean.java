@@ -1,6 +1,6 @@
 package com.octest.banque.bean;
 
-public class BenificiaryBean extends BaseBean {
+public class BeneficiaryBean extends BaseBean {
 	
 	private long acc_No;
 	private String bankName;
