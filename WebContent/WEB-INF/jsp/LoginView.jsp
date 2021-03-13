@@ -1,6 +1,6 @@
 
-<%@page import="in.co.banking.system.util.ServletUtility"%>
-<%@page import="in.co.banking.system.util.DataUtility"%>
+<%@page import="com.octest.banque.util.ServletUtility"%>
+<%@page import="com.octest.banque.util.DataUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,7 +29,7 @@
 						<form role="form" action="<%=BSView.LOGIN_CTL%>" method="post" >
 							<br style="clear: both">
 		
-							<jsp:useBean id="bean" class="in.co.banking.system.bean.UserBean"
+							<jsp:useBean id="bean" class="com.octest.banque.bean.UserBean"
          					   scope="request"></jsp:useBean>
          			   <% String uri=(String)request.getAttribute("uri");%>
 		

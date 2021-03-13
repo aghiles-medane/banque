@@ -16,6 +16,8 @@ import com.octest.banque.controller.BSView;
 import com.octest.banque.controller.BaseCtl;
 import com.octest.banque.controller.LoginCtl;
 import com.octest.banque.exception.ApplicationException;
+import com.octest.banque.exception.DuplicateRecordException;
+
 import com.octest.banque.model.UserModel;
 import com.octest.banque.util.DataUtility;
 import com.octest.banque.util.DataValidator;
