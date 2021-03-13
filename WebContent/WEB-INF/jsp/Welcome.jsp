@@ -8,7 +8,6 @@
 <title>systeme de gestion de compte bancaire</title>
 <body>
 </head>
- <!-- directive page pour inclure le header -->
 
 <br>
  <nav
@@ -30,7 +29,6 @@
 		</div>
 	</div>
 <div style="margin-top: 289px">
-<!-- directive page pour inclure le footer-->
 
 </div>
 </body>

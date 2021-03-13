@@ -1,6 +1,6 @@
 package com.octest.banque.bean;
 
-public class BenificiaryBean {
+public class BenificiaryBean extends BaseBean {
 	
 	private long acc_No;
 	private String bankName;
@@ -48,6 +48,16 @@ public class BenificiaryBean {
 
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
+	}
+
+	public String getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

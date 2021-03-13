@@ -1,8 +1,8 @@
-package com.octest.banque.bean;
+ package com.octest.banque.bean;
 
 import java.util.Date;
 
-public class AccountBean {
+public class AccountBean extends BaseBean {
 	
 	//numéro de compte 
 	private long acc_No;
@@ -67,6 +67,18 @@ public class AccountBean {
 	public void setOverDraftLimit(double overDraftLimit) {
 		this.overDraftLimit = overDraftLimit;
 	}
+
+	public String getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	
 	
 	

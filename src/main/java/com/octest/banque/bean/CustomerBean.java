@@ -1,6 +1,6 @@
 package com.octest.banque.bean;
 
-public class CustomerBean {
+public class CustomerBean extends BaseBean {
 	
 	private long userId;
 	private String name;
@@ -54,5 +54,14 @@ public class CustomerBean {
 
 	public void setAcc_No(long acc_No) {
 		this.acc_No = acc_No;
+	}
+
+	public String getKey() {
+		return id + "";
+	}
+
+	public String getValue() {
+
+		return name;
 	}
 }
