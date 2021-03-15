@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class AccountBean extends BaseBean {
 	
-	//numéro de compte 
+	//numero de compte 
 	private long acc_No;
 	//date d'ouverture
 	private Date openDate;
@@ -18,7 +18,7 @@ public class AccountBean extends BaseBean {
 	private double intrestRate;
 	
 	
-	//Génerer les constructor avec et sans parametres setters + getters
+	//Generer les constructor avec et sans parametres setters + getters
 
 	public String getAccType() {
 		return accType;

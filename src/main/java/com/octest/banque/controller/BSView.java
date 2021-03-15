@@ -2,7 +2,7 @@ package com.octest.banque.controller;
 
 public interface BSView {
 	
-	public String APP_CONTEXT = "/Banking-System";
+	public String APP_CONTEXT = "/Banque";
 
 	public String LAYOUT_VIEW = "/BaseLayout.jsp";
 	public String PAGE_FOLDER = "/jsp";

@@ -31,7 +31,7 @@ import com.octest.banque.util.ServletUtility;
  * @Copyright (c) Navigable Set
  *
  */
-@WebServlet(name = "AccountListCtl", urlPatterns = { "/ctl/AccountListCtl" })
+@WebServlet(name = "AccountListCtl", urlPatterns = { "/controller/AccountListCtl" })
 public class AccountListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(AccountListCtl.class);
 	/**

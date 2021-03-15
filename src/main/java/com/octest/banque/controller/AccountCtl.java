@@ -32,7 +32,7 @@ import com.octest.banque.util.ServletUtility;
  * Servlet implementation class AccountRegistrationCtl
  */
 
-@WebServlet(name = "Account", urlPatterns = { "/ctl/AccountCtl" })
+@WebServlet(name = "Account", urlPatterns = { "/controller/AccountCtl" })
 public class AccountCtl extends BaseCtl {
 
 	private static Logger log = Logger.getLogger(AccountCtl.class);
