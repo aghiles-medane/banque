@@ -13,7 +13,11 @@ import com.octest.banque.exception.ApplicationException;
 
 /**
  * JDBC DataSource is a Data Connection Pool
- * 
+ Interface qui hérite de  CommonDataSource et Wrapper Class. 
+  Contient deux méthodes getConnection () et getConnection (chaîne nom d'utilisateur, chaîne mot de passe)
+  Une  alternative à DriverManager utilisée pour créer une connexion au pool,
+   définir une durée maximale ou minimale pour un pool.
+   aidera à lire les données du fichier "system.properties" et à créer un pool de connexion
  * 
  */
 
@@ -71,7 +75,7 @@ public class JDBCDataSource
     }
 
     /**
-     * Closes a connection4
+     * Closes a connection
      *
      * @param connection
      * @throws Exception

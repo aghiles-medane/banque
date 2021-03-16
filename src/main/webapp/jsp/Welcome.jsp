@@ -8,6 +8,7 @@
 <title>systeme de gestion de compte bancaire</title>
 </head>
 <body>
+<!--  inclure la page JSP du header -->
 <%@ include file="Header.jsp" %>
 <br>
  <nav
@@ -29,6 +30,7 @@
 		</div>
 	</div>
 <div style="margin-top: 289px">
+<!--  inclure la page JSP du "Footer" -->
 <%@ include file="Footer.jsp" %>
 </div>
 </body>

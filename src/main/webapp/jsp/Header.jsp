@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<!-- permet d'utilisez toutes les fonctionnalités ou classes  de bootstrap -->
 <link rel="stylesheet" href="<%=BSView.APP_CONTEXT%>/css/bootstrap.min.css" >
 <script src="<%=BSView.APP_CONTEXT%>/js/jquery-3.3.1.slim.min.js" ></script>
 <script src="<%=BSView.APP_CONTEXT%>/js/popper.min.js" ></script>

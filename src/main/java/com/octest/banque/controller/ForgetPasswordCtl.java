@@ -24,7 +24,7 @@ import com.octest.banque.util.ServletUtility;
  */
 /**
  * ForgetPassword functionality Controller. Performs operation for
- * Authentication, and Email send to Get Password
+ * Authentication, 
  * 
  */
 @WebServlet(name = "ForgetPasswordCtl", urlPatterns = { "/ForgetPasswordCtl" })
@@ -48,7 +48,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 
 		// String login = request.getParameter("login");
 		//
-		// if (in.co.job.portal.util.DataValidator.isNull(login)) {
+		// if (com.job.portal.util.DataValidator.isNull(login)) {
 		// request.setAttribute("login",
 		// PropertyReader.getValue("error.require", "Email Id"));
 		// pass = false;
@@ -123,7 +123,7 @@ public class ForgetPasswordCtl extends BaseCtl {
 			try {
 				model.forgetPassword(bean.getLogin());
 
-				ServletUtility.setSuccessMessage("Password has been sent to your email id.", request);
+				ServletUtility.setSuccessMessage("Password have to be sent to your email.", request);
 			} catch (RecordNotFoundException e) {
 				ServletUtility.setErrorMessage(e.getMessage(), request);
 				log.error(e);
