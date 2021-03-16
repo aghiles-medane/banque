@@ -139,6 +139,7 @@ public class UserModel {
 	/**
 	 * Find User by Login
 	 * 
+	 * 
 	 * @param login
 	 *            : get parameter
 	 * @return bean
