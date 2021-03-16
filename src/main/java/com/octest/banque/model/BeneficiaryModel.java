@@ -1,4 +1,3 @@
-
 package com.octest.banque.model;
 
 import java.sql.Connection;
@@ -77,6 +76,7 @@ public class BeneficiaryModel {
 			pstmt.setLong(2, bean.getAcc_No());
 			pstmt.setString(3,bean.getName());
 			pstmt.setString(4,bean.getBankName());
+			pstmt.setString(5,bean.getIFSCCode());
 			pstmt.setLong(6, bean.getUserId());
 			pstmt.setString(7, bean.getCreatedBy());
 			pstmt.setString(8, bean.getModifiedBy());
@@ -158,6 +158,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -201,6 +202,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -244,6 +246,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -287,6 +290,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -325,6 +329,7 @@ public class BeneficiaryModel {
 			pstmt.setLong(1, bean.getAcc_No());
 			pstmt.setString(2,bean.getName());
 			pstmt.setString(3,bean.getBankName());
+			pstmt.setString(4,bean.getIFSCCode());
 			pstmt.setLong(5, bean.getUserId());
 			pstmt.setString(6, bean.getCreatedBy());
 			pstmt.setString(7, bean.getModifiedBy());
@@ -406,6 +411,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -466,6 +472,7 @@ public class BeneficiaryModel {
 				bean.setAcc_No(rs.getLong(2));
 				bean.setName(rs.getString(3));
 				bean.setBankName(rs.getString(4));
+				bean.setIFSCCode(rs.getString(5));
 				bean.setUserId(rs.getLong(6));
 				bean.setCreatedBy(rs.getString(7));
 				bean.setModifiedBy(rs.getString(8));
@@ -486,6 +493,3 @@ public class BeneficiaryModel {
 	}
 
 }
-
-   
-

@@ -1,6 +1,7 @@
 package com.octest.banque.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,12 +13,8 @@ import org.apache.log4j.Logger;
 
 import com.octest.banque.bean.BaseBean;
 import com.octest.banque.bean.UserBean;
-import com.octest.banque.controller.BSView;
-import com.octest.banque.controller.BaseCtl;
-import com.octest.banque.controller.LoginCtl;
 import com.octest.banque.exception.ApplicationException;
 import com.octest.banque.exception.DuplicateRecordException;
-
 import com.octest.banque.model.UserModel;
 import com.octest.banque.util.DataUtility;
 import com.octest.banque.util.DataValidator;
@@ -25,12 +22,16 @@ import com.octest.banque.util.PropertyReader;
 import com.octest.banque.util.ServletUtility;
 
 
-
-
-//Url of the servlet 
-
+/**
+ * Servlet implementation class LoginCtl
+ */
+/**
+ * Login functionality Controller. Performs operation for Authentication, and
+ * Session Creation and Give permission to access all Functionality regarding
+ * Role
+ * 
+ */
 @WebServlet(name = "LoginCtl", urlPatterns = { "/LoginCtl" })
-
 public class LoginCtl extends BaseCtl {
 
 	private static final long serialVersionUID = 1L;

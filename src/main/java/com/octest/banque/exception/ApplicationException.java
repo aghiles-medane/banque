@@ -4,10 +4,6 @@ package com.octest.banque.exception;
  * ApplicationException is propogated from Service classes when an business
  * logic exception occurered.
  * 
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
- * 
  */
 
 public class ApplicationException  extends Exception

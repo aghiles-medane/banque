@@ -1,14 +1,11 @@
 package com.octest.banque.util;
 
-
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-
 import com.octest.banque.exception.ApplicationException;
-
 
 
 
@@ -17,9 +14,6 @@ import com.octest.banque.exception.ApplicationException;
 /**
  * JDBC DataSource is a Data Connection Pool
  * 
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
  * 
  */
 

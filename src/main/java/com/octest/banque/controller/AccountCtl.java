@@ -1,3 +1,4 @@
+ 
 package com.octest.banque.controller;
 
 import java.io.IOException;
@@ -14,13 +15,11 @@ import javax.servlet.http.Part;
 
 import org.apache.log4j.Logger;
 
+import com.octest.banque.bean.AccountBean;
 import com.octest.banque.bean.BaseBean;
-import com.octest.banque.bean.AccountBean;
-import com.octest.banque.bean.AccountBean;
 import com.octest.banque.bean.UserBean;
 import com.octest.banque.exception.ApplicationException;
 import com.octest.banque.exception.DuplicateRecordException;
-import com.octest.banque.model.AccountModel;
 import com.octest.banque.model.AccountModel;
 import com.octest.banque.model.UserModel;
 import com.octest.banque.util.DataUtility;
@@ -29,7 +28,7 @@ import com.octest.banque.util.PropertyReader;
 import com.octest.banque.util.ServletUtility;
 
 /**
- * Servlet implementation class AccountRegistrationCtl
+ * Servlet implementation class AccountCtl
  */
 
 @WebServlet(name = "Account", urlPatterns = { "/controller/AccountCtl" })
@@ -39,7 +38,7 @@ public class AccountCtl extends BaseCtl {
 
 	/**
 	 * Validate input Data Entered By Account
-	 * faut revoir les fonctions 
+	 * 
 	 * @param request
 	 * @return
 	 */

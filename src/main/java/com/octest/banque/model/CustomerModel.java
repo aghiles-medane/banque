@@ -14,9 +14,21 @@ import com.octest.banque.exception.DatabaseException;
 import com.octest.banque.exception.DuplicateRecordException;
 import com.octest.banque.util.JDBCDataSource;
 
+/**
+ * JDBC Implementation of Customer Model
+ * 
+ */
+
 public class CustomerModel {
-private static Logger log = Logger.getLogger(CustomerModel.class);
+	private static Logger log = Logger.getLogger(CustomerModel.class);
 	
+	/**
+	 * NextPk a Customer
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public Integer nextPK() throws DatabaseException {
 		log.debug("Model nextPK Started");
 		Connection conn = null;
@@ -39,6 +51,13 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		return pk + 1;
 	}
 	
+	/**
+	 * NextAccountNo a Customer
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public long nextAccountNo() throws DatabaseException {
 		log.debug("Model nextPK Started");
 		Connection conn = null;
@@ -65,7 +84,13 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		}
 	}
 
-	
+	/**
+	 * Add a Customer
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public long add(CustomerBean bean) throws ApplicationException, DuplicateRecordException {
 		Connection conn = null;
 		int pk = 0;
@@ -107,7 +132,13 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		return pk;
 	}
 
-
+	/**
+	 * Delete a Customer
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public void delete(CustomerBean bean) throws ApplicationException {
 		
 		Connection conn = null;
@@ -134,6 +165,14 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		
 	}
 	
+	/**
+	 * Find Customer by Name
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public CustomerBean findByName(String name) throws ApplicationException {
 		log.debug("Model findByLogin Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Customer WHERE NAME=?");
@@ -170,7 +209,14 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		return bean;
 	}
 
-
+	/**
+	 * Find Customer by Pk
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public CustomerBean findByPK(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Customer WHERE ID=?");
@@ -208,6 +254,14 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		return bean;
 	}
 	
+	/**
+	 * Find Customer by User id
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	public CustomerBean findByUserId(long userId) throws ApplicationException {
 		log.debug("Model findByPK Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Customer WHERE USerID=?");
@@ -247,7 +301,12 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 	
 	
 
-
+	/**
+	 * Update a Customer
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 */
 	public void update(CustomerBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model update Started");
 		Connection conn = null;
@@ -295,12 +354,31 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 	}
 
 
-
+	/**
+	 * Search Customer
+	 * 
+	 * @param bean
+	 *            : Search Parameters
+	 * @throws DatabaseException
+	 */
 	public List search(CustomerBean bean) throws ApplicationException {
 		return search(bean, 0, 0);
 	}
 
 
+	/**
+	 * Search Customer with pagination
+	 * 
+	 * @return list : List of Users
+	 * @param bean
+	 *            : Search Parameters
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * 
+	 * @throws DatabaseException
+	 */
 	public List search(CustomerBean bean, int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model search Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM Customer WHERE 1=1");
@@ -353,10 +431,26 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 		return list;
 	}
 	
+	/**
+	 * Get List of Customer
+	 * 
+	 * @return list : List of User
+	 * @throws DatabaseException
+	 */
 	public List list() throws ApplicationException {
 		return list(0, 0);
 	}
 
+	/**
+	 * Get List of Customer with pagination
+	 * 
+	 * @return list : List of users
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * @throws DatabaseException
+	 */
 	public List list(int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model list Started");
 		ArrayList list = new ArrayList();
@@ -398,5 +492,3 @@ private static Logger log = Logger.getLogger(CustomerModel.class);
 	}
 
 }
-
-

@@ -1,15 +1,10 @@
 package com.octest.banque.util;
 
-
 import java.text.ParseException;
 import java.util.Date;
 
 /**
  * This class validates input data
- * 
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
  */
 
 public class DataValidator {
@@ -223,7 +218,7 @@ public class DataValidator {
 		 * isInteger("123")); System.out.println("Is Int " + isNotNull("123"));
 		 */
 		// System.out.println(isPhoneNo("9926913693"));
-		// System.out.println(isName("gharis azwaw "));
+		// System.out.println(isName("rohan jain"));
 		System.out.println(isInteger("87"));
 		System.out.println("os password :"+isPassword("Manoj@123"));
 		System.out.println("IS ROLL NO :"+isRollNO("18CS01"));
@@ -231,4 +226,3 @@ public class DataValidator {
 	}
 
 }
-

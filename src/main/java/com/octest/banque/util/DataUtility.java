@@ -1,7 +1,6 @@
 package com.octest.banque.util;
 
 
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,10 +8,6 @@ import java.util.Random;
 
 /**
  * Data Utility class to format data from one format to another
- * 
- * @author Navigable Set
- * @version 1.0
-* @Copyright (c) Navigable Set
  */
 
 public class DataUtility 

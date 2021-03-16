@@ -1,18 +1,39 @@
 package com.octest.banque.bean;
 
+import java.sql.Timestamp;
+import java.util.Date;
 
-
-
+/**
+ * User JavaBean encapsulates TimeTable attributes
+ * 
+ * 
+ */
 public class UserBean extends BaseBean {
-    //login et mot de passe d'un client
-	private String login;
-	private String password;
-	private String confirmPassword;
-	private long roleId;
 
-	//une instance de client
+	/**
+	 * Login of User
+	 */
+	private String login;
+	/**
+	 * Password of User
+	 */
+	private String password;
+	/**
+	 * Confirm Password of User
+	 */
+	private String confirmPassword;
+	/**
+	 * Role Id of User
+	 */
+	private long roleId;
+	/**
+	 * Customer of User
+	 */
 	private CustomerBean customer;
 	
+		
+
+
 	public CustomerBean getCustomer() {
 		return customer;
 	}
@@ -21,35 +42,56 @@ public class UserBean extends BaseBean {
 		this.customer = customer;
 	}
 
-	
+	/**
+	 * @return Login id Of User
+	 */
 	public String getLogin() {
 		return login;
 	}
 
-	
+	/**
+	 * @param Login
+	 *            Id To set User Login ID
+	 */
 	public void setLogin(String login) {
 		this.login = login;
 	}
 
+	/**
+	 * @return Password Of User
+	 */
 	public String getPassword() {
 		return password;
 	}
 
-	
+	/**
+	 * @param Password
+	 *            To set User Password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	
+	/**
+	 * @return Confirm Password Of User
+	 */
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}
 
-	
+	/**
+	 * @param Confirm
+	 *            PAssword To set User Confirm Password
+	 */
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
+
 	
+
+	/**
+	 * @return ROle Id Of User
+	 */
 	public long getRoleId() {
 		return roleId;
 	}
@@ -62,7 +104,10 @@ public class UserBean extends BaseBean {
 		this.roleId = roleId;
 	}
 
-
+	/**
+	 * @return unSuccessfulLogin Of User
+	 */
+	
 	public String getKey() {
 		return id + "";
 	}
@@ -70,7 +115,4 @@ public class UserBean extends BaseBean {
 	public String getValue() {
 		return login;
 	}
-
-	
-	
 }

@@ -1,6 +1,7 @@
 package com.octest.banque.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,6 @@ import org.apache.log4j.Logger;
 
 import com.octest.banque.bean.BaseBean;
 import com.octest.banque.bean.UserBean;
-import com.octest.banque.controller.BaseCtl;
 import com.octest.banque.util.DataUtility;
 import com.octest.banque.util.DataValidator;
 import com.octest.banque.util.ServletUtility;
@@ -19,6 +19,11 @@ import com.octest.banque.util.ServletUtility;
 /**
  * Servlet implementation class BaseCtl
  */
+/**
+ * Base controller class of project. It contain (1) Generic operations (2)
+ * Generic constants (3) Generic work flow
+ */
+
 @WebServlet("/BaseCtl")
 public abstract class BaseCtl extends HttpServlet
 {
@@ -177,4 +182,3 @@ public abstract class BaseCtl extends HttpServlet
 	protected abstract String getView();
 	
 }
-

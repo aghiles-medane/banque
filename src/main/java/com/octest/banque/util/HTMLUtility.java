@@ -1,6 +1,5 @@
 package com.octest.banque.util;
 
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -12,10 +11,6 @@ import com.octest.banque.bean.DropdownListBean;
 
 /**
  * HTML Utility class to produce HTML contents like Dropdown List.
- *
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
  *
  */
 public class HTMLUtility {
@@ -97,4 +92,3 @@ public class HTMLUtility {
 		return sb.toString();
 	}
 }
-

@@ -2,7 +2,7 @@ package com.octest.banque.controller;
 
 public interface BSView {
 	
-	public String APP_CONTEXT = "/Banque";
+	public String APP_CONTEXT = "/banque";
 
 	public String LAYOUT_VIEW = "/BaseLayout.jsp";
 	public String PAGE_FOLDER = "/jsp";
@@ -39,35 +39,35 @@ public interface BSView {
 	public String MY_PROFILE_VIEW = PAGE_FOLDER + "/MyProfileView.jsp";
 	public String FORGET_PASSWORD_VIEW = PAGE_FOLDER + "/ForgetPasswordView.jsp";
 
-	public String ERROR_CTL = "/ctl/ErrorCtl";
-	public String USER_CTL = APP_CONTEXT + "/ctl/UserCtl";
-	public String USER_LIST_CTL = APP_CONTEXT + "/ctl/UserListCtl";
+	public String ERROR_CTL = "/controller/ErrorCtl";
+	public String USER_CTL = APP_CONTEXT + "/controller/UserCtl";
+	public String USER_LIST_CTL = APP_CONTEXT + "/controller/UserListCtl";
 	 
-	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/CustomerCtl";
-	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
+	public String CUSTOMER_CTL = APP_CONTEXT + "/controller/CustomerCtl";
+	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/controller/CustomerListCtl";
 	
-	public String ACCOUNT_CTL = APP_CONTEXT + "/ctl/AccountCtl";
-	public String ACCOUNT_LIST_CTL = APP_CONTEXT + "/ctl/AccountListCtl";
+	public String ACCOUNT_CTL = APP_CONTEXT + "/controller/AccountCtl";
+	public String ACCOUNT_LIST_CTL = APP_CONTEXT + "/controller/AccountListCtl";
 	
-	public String TRANSACTION_CTL = APP_CONTEXT + "/ctl/TransactionCtl";
-	public String TRANSACTION_LIST_CTL = APP_CONTEXT + "/ctl/TransactionListCtl";
+	public String TRANSACTION_CTL = APP_CONTEXT + "/controller/TransactionCtl";
+	public String TRANSACTION_LIST_CTL = APP_CONTEXT + "/controller/TransactionListCtl";
 	
-	public String ADMIN_TRANSACTION_CTL = APP_CONTEXT + "/ctl/AdminTransactionCtl";
-	public String ADMIN_TRANSACTION_LIST_CTL = APP_CONTEXT + "/ctl/AdminTransactionListCtl";
+	public String ADMIN_TRANSACTION_CTL = APP_CONTEXT + "/controller/AdminTransactionCtl";
+	public String ADMIN_TRANSACTION_LIST_CTL = APP_CONTEXT + "/controller/AdminTransactionListCtl";
 	
-	public String BENEFICIARY_CTL = APP_CONTEXT + "/ctl/BeneficiaryCtl";
-	public String BENEFICIARY_LIST_CTL = APP_CONTEXT + "/ctl/BeneficiaryListCtl";
+	public String BENEFICIARY_CTL = APP_CONTEXT + "/controller/BeneficiaryCtl";
+	public String BENEFICIARY_LIST_CTL = APP_CONTEXT + "/controller/BeneficiaryListCtl";
 	
 	
 	public String USER_REGISTRATION_CTL = APP_CONTEXT + "/UserRegistrationCtl";
 	public String LOGIN_CTL = APP_CONTEXT + "/LoginCtl";
 	public String WELCOME_CTL = APP_CONTEXT + "/WelcomeCtl";
 	public String LOGOUT_CTL = APP_CONTEXT + "/LoginCtl";
-	public String GET_MARKSHEET_CTL = APP_CONTEXT + "/ctl/GetMarksheetCtl";
-	public String CHANGE_PASSWORD_CTL = APP_CONTEXT + "/ctl/ChangePasswordCtl";
-	public String MY_PROFILE_CTL = APP_CONTEXT + "/ctl/MyProfileCtl";
+	public String GET_MARKSHEET_CTL = APP_CONTEXT + "/controller/GetMarksheetCtl";
+	public String CHANGE_PASSWORD_CTL = APP_CONTEXT + "/controller/ChangePasswordCtl";
+	public String MY_PROFILE_CTL = APP_CONTEXT + "/controller/MyProfileCtl";
 	public String FORGET_PASSWORD_CTL = APP_CONTEXT + "/ForgetPasswordCtl";
-	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/ctl/MarksheetMeritListCtl";
+	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/controller/MarksheetMeritListCtl";
 
 
 

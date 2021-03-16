@@ -1,15 +1,43 @@
 package com.octest.banque.bean;
 
+/**
+ * Beneficiary JavaBean encapsulates TimeTable attributes
+ * 
+ * 
+ */
 public class BeneficiaryBean extends BaseBean {
 	
+	/**
+	 * Account  No of Beneficiary
+	 */
 	private long acc_No;
+
+	/**
+	 * Bank Name of Beneficiary
+	 */
 	private String bankName;
+	/**
+	 * IFSC Code of Beneficiary
+	 */
+	private String IFSCCode;
+	/**
+	 * Name  of Beneficiary
+	 */
 	private String  name;
+	/**
+	 * Confirm Account No of Beneficiary
+	 */
 	private String confirmAccNo;
+	/**
+	 * User Id of Beneficiary
+	 */
 	private long userId;
 	
-	//Génerer les constructor avec et sans parametres setters + getters
 	
+	
+	
+	
+
 	public long getUserId() {
 		return userId;
 	}
@@ -50,19 +78,20 @@ public class BeneficiaryBean extends BaseBean {
 		this.bankName = bankName;
 	}
 
+	public String getIFSCCode() {
+		return IFSCCode;
+	}
+
+	public void setIFSCCode(String iFSCCode) {
+		IFSCCode = iFSCCode;
+	}
+
 	public String getKey() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
-	
-	
-	
 
 }

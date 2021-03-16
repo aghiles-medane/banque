@@ -2,6 +2,7 @@ package com.octest.banque.controller;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import com.octest.banque.bean.BaseBean;
 import com.octest.banque.bean.AccountBean;
+import com.octest.banque.bean.BaseBean;
 import com.octest.banque.exception.ApplicationException;
 import com.octest.banque.model.AccountModel;
 import com.octest.banque.util.DataUtility;
@@ -24,13 +25,6 @@ import com.octest.banque.util.ServletUtility;
  * Servlet implementation class AccountListCtl
  */
 
-/**
- *
- * @author Navigable set
- * @version 1.0
- * @Copyright (c) Navigable Set
- *
- */
 @WebServlet(name = "AccountListCtl", urlPatterns = { "/controller/AccountListCtl" })
 public class AccountListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(AccountListCtl.class);

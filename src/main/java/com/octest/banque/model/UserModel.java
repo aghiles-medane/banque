@@ -15,13 +15,24 @@ import com.octest.banque.exception.DatabaseException;
 import com.octest.banque.exception.DuplicateRecordException;
 import com.octest.banque.exception.RecordNotFoundException;
 import com.octest.banque.util.DataUtility;
+
+
 import com.octest.banque.util.JDBCDataSource;
 
-
-
+/**
+ * JDBC Implementation of UserModel
+ * 
+ */
 public class UserModel {
 	private static Logger log = Logger.getLogger(UserModel.class);
 	
+	/**
+	 * NextPk a User
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	public Integer nextPK() throws DatabaseException {
 		log.debug("Model nextPK Started");
 		Connection conn = null;
@@ -45,6 +56,13 @@ public class UserModel {
 		return pk + 1;
 	}
 
+	/**
+	 * Add a User
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 	
 	public long add(UserBean bean) throws ApplicationException, DuplicateRecordException {
 		Connection conn = null;
@@ -84,7 +102,13 @@ public class UserModel {
 		
 		return pk;
 	}
-
+	/**
+	 * Delete a User
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 * 
+	 */
 
 	public void delete(UserBean bean) throws ApplicationException {
 		
@@ -112,6 +136,14 @@ public class UserModel {
 		
 	}
 
+	/**
+	 * Find User by Login
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 	
 	public UserBean findByLogin(String login) throws ApplicationException {
 		log.debug("Model findByLogin Started");
@@ -146,6 +178,14 @@ public class UserModel {
 		return bean;
 	}
 
+	/**
+	 * Find User by Pk
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 
 	public UserBean findByPK(long pk) throws ApplicationException {
 		log.debug("Model findByPK Started");
@@ -181,7 +221,12 @@ public class UserModel {
 		return bean;
 	}
 
-
+	/**
+	 * Update a user
+	 * 
+	 * @param bean
+	 * @throws DatabaseException
+	 */
 	public void update(UserBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model update Started");
 		Connection conn = null;
@@ -223,12 +268,30 @@ public class UserModel {
 	}
 
 
-
+	/**
+	 * Search User
+	 * 
+	 * @param bean
+	 *            : Search Parameters
+	 * @throws DatabaseException
+	 */
 	public List search(UserBean bean) throws ApplicationException {
 		return search(bean, 0, 0);
 	}
 
-
+	/**
+	 * Search User with pagination
+	 * 
+	 * @return list : List of Users
+	 * @param bean
+	 *            : Search Parameters
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * 
+	 * @throws DatabaseException
+	 */
 	public List search(UserBean bean, int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model search Started");
 		StringBuffer sql = new StringBuffer("SELECT * FROM P_USER WHERE 1=1");
@@ -281,9 +344,26 @@ public class UserModel {
 		return list;
 	}
 	
+	/**
+	 * Get List of User
+	 * 
+	 * @return list : List of User
+	 * @throws DatabaseException
+	 */
 	public List list() throws ApplicationException {
 		return list(0, 0);
 	}
+	
+	/**
+	 * Get List of User with pagination
+	 * 
+	 * @return list : List of users
+	 * @param pageNo
+	 *            : Current Page No.
+	 * @param pageSize
+	 *            : Size of Page
+	 * @throws DatabaseException
+	 */
 
 	public List list(int pageNo, int pageSize) throws ApplicationException {
 		log.debug("Model list Started");
@@ -322,7 +402,16 @@ public class UserModel {
 
 	}
 
-	
+	/**
+	 * Authenticate User by login and password
+	 * 
+	 * @param login
+	 *            : get parameter
+	 * @param password
+	 *            : get parameter
+	 * @return bean
+	 * @throws DatabaseException
+	 */
 
 	public UserBean authenticate(String login, String password) throws ApplicationException {
 		log.debug("Model authenticate Started");
@@ -362,7 +451,18 @@ public class UserModel {
 	}
 		
 
-	
+	/**
+	 * Change Password of User
+	 * 
+	 * @param id
+	 *            : long id
+	 * @param old
+	 *            password : String oldPassword
+	 * @param newpassword
+	 *            : String newPassword
+	 * @throws org.omg.CORBA.portable.ApplicationException
+	 * @throws DatabaseException
+	 */
 
 		public boolean changePassword(Long id, String oldPassword, String newPassword)
 				throws RecordNotFoundException, ApplicationException {
@@ -394,8 +494,12 @@ public class UserModel {
 			map.put("password", beanExist.getPassword());
 		
 
+			
 
+		
 
+			
+	
 
 			
 			log.debug("Model changePassword End");
@@ -403,11 +507,19 @@ public class UserModel {
 
 		}
 
-	public UserBean updateAccess(UserBean bean) throws ApplicationException {
-		return null;
-	}
+	
 
 	
+	/**
+	 * Register a user
+	 * 
+	 * @param bean
+	 * @throws ApplicationException
+	 * @throws DuplicateRecordException
+	 *             : throws when user already exists
+	 * @throws org.omg.CORBA.portable.ApplicationException
+	 */
+
 	public long registerUser(UserBean bean)
 			throws ApplicationException, DuplicateRecordException {
 
@@ -415,13 +527,35 @@ public class UserModel {
 
 		long pk = add(bean);
 
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("login", bean.getLogin());
-		map.put("password", bean.getPassword());
-
+		/*
+		 * HashMap<String, String> map = new HashMap<String, String>(); map.put("login",
+		 * bean.getLogin()); map.put("password", bean.getPassword());
+		 * 
+		 * String message = EmailBuilder.getUserRegistrationMessage(map);
+		 * 
+		 * EmailMessage msg = new EmailMessage();
+		 * 
+		 * msg.setTo(bean.getLogin());
+		 * msg.setSubject("Registration is successful for Placement Selection");
+		 * msg.setMessage(message); msg.setMessageType(EmailMessage.HTML_MSG);
+		 * 
+		 * try { EmailUtility.sendMail(msg); } catch (Exception e) {
+		 * e.printStackTrace(); }
+		 */
 		return pk;
 	}
 
+	/**
+	 * Send the password of User to his Email
+	 * 
+	 * @return boolean : true if success otherwise false
+	 * @param login
+	 *            : User Login
+	 * @throws ApplicationException
+	 * @throws RecordNotFoundException
+	 *             : if user not found
+	 * 
+	 */
 	public boolean forgetPassword(String login)
 			throws ApplicationException, RecordNotFoundException, ApplicationException {
 		UserBean userData = findByLogin(login);
@@ -432,12 +566,15 @@ public class UserModel {
 			throw new RecordNotFoundException("Email ID does not exists !");
 
 		}
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("login", userData.getLogin());
-		map.put("password", userData.getPassword());
-		
-	
-		flag = true;
+		/*
+		 * HashMap<String, String> map = new HashMap<String, String>(); map.put("login",
+		 * userData.getLogin()); map.put("password", userData.getPassword()); String
+		 * message = EmailBuilder.getForgetPasswordMessage(map); EmailMessage msg = new
+		 * EmailMessage(); msg.setTo(login);
+		 * msg.setSubject("Banking System Your Password"); msg.setMessage(message);
+		 * msg.setMessageType(EmailMessage.HTML_MSG); EmailUtility.sendMail(msg); flag =
+		 * true;
+		 */
 		return flag;
 	}
 }

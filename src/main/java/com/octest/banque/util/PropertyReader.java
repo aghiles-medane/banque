@@ -1,15 +1,10 @@
 package com.octest.banque.util;
 
-
 import java.util.ResourceBundle;
 
 /**
  * Read the property values from application properties file using Resource
  * Bundle
- *
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
  *
  */
 
@@ -79,4 +74,3 @@ public class PropertyReader
     }
     
 }
-

@@ -2,24 +2,44 @@ package com.octest.banque.bean;
 
 import java.util.Date;
 
+/**
+ * Transaction  JavaBean encapsulates TimeTable attributes
+ * 
+ * 
+ */
+
 public class TransactionBean extends BaseBean {
-	
-	// transaction id
+
+	/**
+	 * Transaction Id of Transaction
+	 */
 	private long trasactionId;
-	// date transaction
+	/**
+	 * Transaction Date of Transaction
+	 */
 	private Date trasactionDate;
-	//type transaction
+	/**
+	 * Transaction Type of Transaction
+	 */
 	private String transactionType;
-	//montant de la transaction
+	/**
+	 * Transaction Amount of Transaction
+	 */
 	private double transactionAmount;
-	//description
+	/**
+	 * Description of Transaction
+	 */
 	private String description;
-	//
+	/**
+	 * To Account No of Transaction
+	 */
 	private long toAccountNo;
-	//
+	/**
+	 * From Account No of Transaction
+	 */
 	private long fromAccountNo;
 	
-
+	
 	public long getTrasactionId() {
 		return trasactionId;
 	}

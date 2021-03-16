@@ -1,25 +1,41 @@
- package com.octest.banque.bean;
+package com.octest.banque.bean;
 
 import java.util.Date;
 
+/**
+ * Account JavaBean encapsulates TimeTable attributes
+ * 
+ * 
+ */
 public class AccountBean extends BaseBean {
-	
-	//numero de compte 
+
+	/**
+	 * Account No of Account
+	 */
 	private long acc_No;
-	//date d'ouverture
+	/**
+	 * Open Date of Account
+	 */
 	private Date openDate;
-	// le solde
+	/**
+	 * Balance of Account
+	 */
 	private double balance;
-	//autorisation de decouvert
+	/**
+	 * Over Draft Limit of Account
+	 */
 	private double overDraftLimit;
-	//le type de compte : EPARGNE ou COURANT
+	/**
+	 * Account Type of Account
+	 */
 	private String accType;
-	//le taux d'intérêt 
+	/**
+	 * Intrest Rate of Account
+	 */
 	private double intrestRate;
 	
 	
-	//Generer les constructor avec et sans parametres setters + getters
-
+	
 	public String getAccType() {
 		return accType;
 	}
@@ -67,20 +83,15 @@ public class AccountBean extends BaseBean {
 	public void setOverDraftLimit(double overDraftLimit) {
 		this.overDraftLimit = overDraftLimit;
 	}
+	
+	
 
 	public String getKey() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(id);
 	}
 
 	public String getValue() {
-		// TODO Auto-generated method stub
-		return null;
+		return String.valueOf(acc_No);
 	}
-	
-	
-	
-	
-	
 
 }

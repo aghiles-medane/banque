@@ -1,6 +1,5 @@
+
 package com.octest.banque.util;
-
-
 
 import java.io.IOException;
 import java.util.List;
@@ -20,9 +19,6 @@ import com.octest.banque.controller.BaseCtl;
  * redirect, handle generic exception=same time exception, manage success and
  * error message, manage default Bean and List, manage pagination parameters
  * 
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
  */
 
 public class ServletUtility {
@@ -122,6 +118,15 @@ public class ServletUtility {
 	 * @param pageNo
 	 * @param request
 	 */
+	
+	public static void setSize(int size, HttpServletRequest request) {
+		request.setAttribute("size", size);
+	}
+
+	public static int getSize(HttpServletRequest request) {
+		return (Integer) request.getAttribute("size");
+	}
+	
 	public static void setPageNo(int pageNo, HttpServletRequest request) {
 		request.setAttribute("pageNo", pageNo);
 	}

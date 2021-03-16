@@ -2,11 +2,6 @@ package com.octest.banque.exception;
 
 /**
  * RecordNotFoundException thrown when a record not found occurred
- * 
- * @author Navigable Set
- * @version 1.0
- * @Copyright (c) Navigable Set
- * 
  */
 
 public class RecordNotFoundException extends Exception
