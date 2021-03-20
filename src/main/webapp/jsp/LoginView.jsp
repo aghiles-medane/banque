@@ -1,4 +1,4 @@
-
+<!-- DESING LOGIN FORM -->
 <%@page import="com.octest.banque.util.ServletUtility"%>
 <%@page import="com.octest.banque.util.DataUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -10,6 +10,8 @@
 <title>Login</title>
 </head>
 <body>
+<!-- Include of the header JSP -->
+
 <%@ include file="Header.jsp" %>
 <br>
  <nav
@@ -73,6 +75,7 @@
 		<!--feedback-->
 		<br>
 		<div style="margin-top: 205px">
+		<!-- Include of the Footer JSP -->
 		<%@ include file="Footer.jsp"%>
 		</div>
 

@@ -25,8 +25,10 @@ import com.octest.banque.util.ServletUtility;
 
 
 /**
+ *une servlet qui recevra la requÃªte pour effectuer
+ * l'opÃ©ration et enverra la rÃ©ponse Ã  view (useregistration.jsp)
  * Servlet implementation class UserRegistrationCtl
- * une servlet qui obtiendra la requ�te pour effectuer l'op�ration(request) et enverra la r�ponse(answer) � view (registration.jsp).
+ * une servlet qui obtiendra la requête pour effectuer l'opération(request) et enverra la réponse(answer) à view (registration.jsp).
  */
 
 @WebServlet(name = "UserRegistrationCtl", urlPatterns = { "/UserRegistrationCtl" })
@@ -36,10 +38,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(UserRegistrationCtl.class);
 
 	/**
-	 * Validate input Data Entered By User
-	 * 
-	 * @param request
-	 * @return
+	 *Valider les donnÃ©es d'entrÃ©e saisies par l'utilisateur
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -82,10 +81,8 @@ public class UserRegistrationCtl extends BaseCtl {
 	}
 
 	/**
-	 * Populates bean object from request parameters
 	 * 
-	 * @param request
-	 * @return
+	 *Remplit l'objet bean Ã  partir des paramÃ¨tres de la requÃªte
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -120,13 +117,8 @@ public class UserRegistrationCtl extends BaseCtl {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * Contains display logic
-	 */
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	//Methode doGet
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("UserRegistrationCtl Method doGet Started");
@@ -136,12 +128,9 @@ public class UserRegistrationCtl extends BaseCtl {
 	}
 
 	/**
-	 * Contains submit logic
+	 * Contient la logique de soumission
 	 */
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("in post method");
@@ -181,7 +170,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
+	 *Renvoie la page VIEW de ce contrÃ´leur
 	 * 
 	 * @return
 	 */

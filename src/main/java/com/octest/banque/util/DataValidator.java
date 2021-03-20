@@ -3,25 +3,23 @@ package com.octest.banque.util;
 import java.text.ParseException;
 import java.util.Date;
 
-/**
- * This class validates input data
- */
+/** data validateur 
+ * 
+ *Cette classe se chargera de valider toutes les données qui proviendront des champs d'entrée
+ *
+ **/
+
 
 public class DataValidator {
 	/**
-	 * Checks if value is Null
+	 *
+	 * Valider le champ de texte
 	 * 
-	 * @param val
-	 * @return
 	 */
 	public static boolean isName(String val) {
 
 		String name = "^[A-Za-z ]*$";
-		/*
-		 * if (isNotNull(val)) { return val.matches(name);
-		 * 
-		 * } else { return false; }
-		 */
+		
 		if (val.matches(name)) {
 			return true;
 		} else {
@@ -41,10 +39,9 @@ public class DataValidator {
 	}
 
 	/**
-	 * Checks if value is Password
 	 * 
-	 * @param val
-	 * @return boolean
+	 * Valider le champ de saisie du mot de passe
+	 * 
 	 */
 	public static boolean isPassword(String val) {
 		String passregex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\\S])[A-Za-z0-9\\S]{6,12}$";
@@ -57,10 +54,9 @@ public class DataValidator {
 	}
 
 	/**
-	 * Checks if value is Phone No
 	 * 
-	 * @param val
-	 * @return boolean
+	 * champ de saisie du numéro de téléphone
+	 * 
 	 */
 	public static boolean isPhoneNo(String val) {
 		String regex = "^[7-9][0-9]{9}$";
@@ -96,10 +92,9 @@ public class DataValidator {
 	}
 
 	/**
-	 * Checks if value is an Integer
 	 * 
-	 * @param val
-	 * @return
+	 * Valider la valeur entière
+	 * 
 	 */
 
 	public static boolean isInteger(String val) {
@@ -151,16 +146,7 @@ public class DataValidator {
 		}
 	}
 
-	/*public static boolean isIntegerName(String val) {
-		String match = "^[0-9]{3}$";
-
-		if (val.matches(match)) {
-			return true;
-		} else {
-			return false;
-		}
-
-	}*/
+	
 
 	/**
 	 * Checks if value is valid Email ID

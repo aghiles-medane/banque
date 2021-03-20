@@ -7,30 +7,26 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * Data Utility class to format data from one format to another
- */
+Data Utility est également une classe personnalisée qui nous aidera à convertir nos données en un type
+ tel que convertir les données String au format int Set Date, etc.
+  */
 
 public class DataUtility 
 {
 	/**
-	 * Application Date Format
+	 *  Format de la date
 	 */
 	public static final String APP_DATE_FORMAT = "MM/dd/yyyy";
 
-//	public static final String APP_TIME_FORMAT = "MM/dd/yyyy HH:mm:ss";
 
-	/**
-	 * Date formatter
-	 */
+	
 	private static final SimpleDateFormat formatter = new SimpleDateFormat(APP_DATE_FORMAT);
 
-	//private static final SimpleDateFormat timeFormatter = new SimpleDateFormat(APP_TIME_FORMAT);
 
 	/**
-	 * Trims and trailing and leading spaces of a String
+	 * Convertir objet en string
 	 * 
-	 * @param val
-	 * @return
+	 * 
 	 */
 	public static String getString(String val) {
 		if (DataValidator.isNotNull(val)) {
@@ -41,10 +37,8 @@ public class DataUtility
 	}
 
 	/**
-	 * Converts and Object to String
-	 * 
-	 * @param val
-	 * @return
+	 * Convertit une  chaîne en entier
+     *
 	 */
 	public static String getStringData(Object val) {
 		
@@ -70,10 +64,8 @@ public class DataUtility
 	}
 
 	/**
-	 * Converts String into Long
-	 * 
-	 * @param val
-	 * @return
+	 *chaîne en longue
+     *
 	 */
 	public static long getLong(String val) {
 		if (DataValidator.isLong(val)) {
@@ -91,11 +83,9 @@ public class DataUtility
 		}
 	}
 
+
 	/**
-	 * Converts String into Date
-	 * 
-	 * @param val
-	 * @return
+	 * chaîne en date
 	 */
 	 public static Date getDate(String val) {
 	        Date date = null;
@@ -117,10 +107,7 @@ public class DataUtility
 		return date;
 	}
 	/**
-	 * Converts Date into String
-	 * 
-	 * @param date
-	 * @return
+	date en chaine 
 	 */
 	public static String getDateString(Date date) {
 		
@@ -137,23 +124,18 @@ public class DataUtility
 		
 	}
 
-	/**
-	 * Gets date after n number of days
+   /**
+	 * date apres n jours
 	 * 
-	 * @param date
-	 * @param day
-	 * @return
 	 */
-	public static Date getDate(Date date, int day) {
+	 static Date getDate(Date date, int day) {
 		return null;
 	}
 
-	/**
-	 * Converts String into Time
-	 * 
-	 * @param cdt
-	 * @return
-	 */
+	 /**
+       * Converts String into Time
+	   *
+	   */
 	public static Timestamp getTimestamp(long l) {
 
 		Timestamp timeStamp = null;
@@ -167,25 +149,23 @@ public class DataUtility
 	
 	/**
 	 * Converts String into Time
-	 * 
-	 * @param cdt
-	 * @return
+	 *
 	 */
 	public static Timestamp getTimestamp(String cdt) {
 
 		Timestamp timeStamp = null;
 		try {
-		//	timeStamp = new Timestamp((timeFormatter.parse(cdt)).getTime());
 		} catch (Exception e) {
 			return null;
 		}
 		return timeStamp;
 	}
 	/**
+	 *
+	 * 
 	 * Converts Time into Long
 	 * 
-	 * @param tm
-	 * @return
+	 *
 	 */
 	public static long getTimestamp(Timestamp tm) {
 		try {
@@ -196,10 +176,9 @@ public class DataUtility
 	}
 	
 	/**
-	 * Provide Current time
 	 * 
-	 * 
-	 * @return Time
+	 * l'heure actuelle
+     *
 	 */
 	public static Timestamp getCurrentTimestamp() {
 		Timestamp timeStamp = null;
@@ -221,17 +200,7 @@ public class DataUtility
 		DataUtility d=new DataUtility();
 		
 		Date date=new Date();
-		//System.out.println(getDateString(date));
-	
-		//System.out.println(d.getCurrentTimestamp());
-		/*
-		 * String s1=""; System.out.println(getString("Ravi"));
-		 * System.out.println(s1.isEmpty());
-		 * System.out.println(getDate("21/01/1994")); System.out.println(new
-		 * Date());
-		 */
-		//System.out.println(getDate("01/21/1998"));
-
+		
 		
 		System.out.println("formate date :"+getDate("12/09/1991"));
 	}

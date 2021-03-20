@@ -1,3 +1,16 @@
+/*
+ * Dans cette class on a definit les methodes suivantes :
+ * 
+ *1)Ajouter un utilisateur
+ *2)Supprimer un utilisateur
+ *3) chercher un utilisateur avec son login
+ *4)changer les Info dans utilisateur
+ * 5) Liste des utilisateurs
+ * 
+ * 
+ * 
+ */
+
 package com.octest.banque.model;
 
 import java.sql.Connection;
@@ -22,7 +35,7 @@ import com.octest.banque.util.JDBCDataSource;
 
 /**
  * JDBC Implementation of UserModel
- * UserModel contient toutes les Methodes liée aux transactions de base de données aux utilisateurs 
+ * UserModel contient toutes les Methodes liÃ©e aux transactions de base de donnÃ©es aux utilisateurs 
  * Insert, Delete, Update. 
  * 
  */
@@ -186,7 +199,7 @@ public class UserModel {
 	}
 
 	/**
-	 * Find User by Pk
+	 * Find User by User_id
 	 * 
 	 * @param login
 	 *            : get parameter
@@ -288,7 +301,7 @@ public class UserModel {
 	}
 
 	/**
-	 * Search User with pagination
+	 * Search User 
 	 * 
 	 * @return list : List of Users
 	 * @param bean
@@ -363,14 +376,10 @@ public class UserModel {
 	}
 	
 	/**
-	 * Get List of User with pagination
+	 * Get List of User 
 	 * 
 	 * @return list : List of users
-	 * @param pageNo
-	 *            : Current Page No.
-	 * @param pageSize
-	 *            : Size of Page
-	 * @throws DatabaseException
+	 * 
 	 */
 
 	public List list(int pageNo, int pageSize) throws ApplicationException {
@@ -411,7 +420,8 @@ public class UserModel {
 	}
 
 	/**
-	 * Authenticate User by login and password
+	 * Add login method
+	 * 
 	 * 
 	 * @param login
 	 *            : get parameter
@@ -501,15 +511,6 @@ public class UserModel {
 			map.put("login", beanExist.getLogin());
 			map.put("password", beanExist.getPassword());
 		
-
-			
-
-		
-
-			
-	
-
-			
 			log.debug("Model changePassword End");
 			return flag;
 
@@ -535,7 +536,7 @@ public class UserModel {
 
 		long pk = add(bean);
 
-	
+
 		return pk;
 	}
 
@@ -561,6 +562,7 @@ public class UserModel {
 
 		}
 		
+
 		return flag;
 	}
 }
