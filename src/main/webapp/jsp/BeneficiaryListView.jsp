@@ -78,7 +78,6 @@
 				<th scope="col">Account No</th>
 				<th scope="col">Name</th>
 				<th scope="col">Bank Name</th>
-				<th scope="col">IFSC Code</th>
 				<th scope="col">Pay Amount</th>
  				<th scope="col">Edit</th>
 			</tr>
@@ -86,13 +85,17 @@
 		<tbody>
 				<%
 				
-					int pageNo = ServletUtility.getPageNo(request);
-					int pageSize = ServletUtility.getPageSize(request);
-					int size = ServletUtility.getSize(request);
-					int index = ((pageNo - 1) * pageSize) + 1;
+					
+				    int pageNo = ServletUtility.getPageNo(request);
+			    	int pageSize = ServletUtility.getPageSize(request);
+			    	int size=(int)request.getAttribute("size");
+			     	int index = ((pageNo - 1) * pageSize) + 1;
 					BeneficiaryBean bean = null;
+					
 					List list = ServletUtility.getList(request);
+					
 					Iterator<BeneficiaryBean> it = list.iterator();
+					
 					while (it.hasNext()) {
 						bean = it.next();
 				%>
@@ -102,7 +105,7 @@
 				<td><%=bean.getAcc_No()%></td>
 				<td><%=bean.getName()%></td>
 				<td><%=bean.getBankName()%></td>
-				<td><%=bean.getIFSCCode()%></td>
+			
 				<td>
 					<a class="btn btn-primary pull-right"  href="TransactionCtl?acN=<%=bean.getAcc_No()%>">Pay</a>
 				</td>
@@ -124,7 +127,7 @@
 					
 					<td align="right"><input type="submit" name="operation" class="btn btn-primary pull-right" 
 						value="<%=BeneficiaryListCtl.OP_NEXT%>"
-						<%=((list.size() < pageSize) || size==pageNo*pageSize) ? "disabled" : ""%>></td>
+						<%=((list.size() < pageSize) ||pageNo*pageSize==size) ? "disabled" : ""%>></td>
 				</tr>
 			</table>
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input

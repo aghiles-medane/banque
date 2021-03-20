@@ -17,10 +17,6 @@ public class BeneficiaryBean extends BaseBean {
 	 */
 	private String bankName;
 	/**
-	 * IFSC Code of Beneficiary
-	 */
-	private String IFSCCode;
-	/**
 	 * Name  of Beneficiary
 	 */
 	private String  name;
@@ -78,13 +74,7 @@ public class BeneficiaryBean extends BaseBean {
 		this.bankName = bankName;
 	}
 
-	public String getIFSCCode() {
-		return IFSCCode;
-	}
-
-	public void setIFSCCode(String iFSCCode) {
-		IFSCCode = iFSCCode;
-	}
+	
 
 	public String getKey() {
 		return null;

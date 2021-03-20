@@ -63,16 +63,6 @@ public class BeneficiaryCtl extends BaseCtl {
 			pass = false;
 		}
 
-		if (DataValidator.isNull(request.getParameter("bName"))) {
-			request.setAttribute("bName", PropertyReader.getValue("error.require", "Bank Name"));
-			pass = false;
-		}
-
-		if (DataValidator.isNull(request.getParameter("ifsc"))) {
-			request.setAttribute("ifsc", PropertyReader.getValue("error.require", "IFSC Code"));
-			pass = false;
-		}
-
 		if (!request.getParameter("accNo").equals(request.getParameter("confirmAccNo"))
 				&& !"".equals(request.getParameter("confirmAccNo"))) {
 			
@@ -101,7 +91,6 @@ public class BeneficiaryCtl extends BaseCtl {
 		bean.setAcc_No(DataUtility.getLong(request.getParameter("accNo")));
 		bean.setName(DataUtility.getString(request.getParameter("name")));
 		bean.setBankName(DataUtility.getString(request.getParameter("bName")));
-		bean.setIFSCCode(DataUtility.getString(request.getParameter("ifsc")));
 		populateDTO(bean, request);
 		log.debug("BeneficiaryRegistrationCtl Method populatebean Ended");
 		return bean;

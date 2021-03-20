@@ -28,6 +28,7 @@ import com.octest.banque.util.ServletUtility;
  */
 
 
+@SuppressWarnings("serial")
 @WebServlet(name = "TransactionListCtl", urlPatterns = { "/controller/TransactionListCtl" })
 public class TransactionListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(TransactionListCtl.class);
@@ -59,6 +60,7 @@ public class TransactionListCtl extends BaseCtl {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("TransactionListCtl doGet Start");
+		@SuppressWarnings("rawtypes")
 		List list = null;
 
 		int pageNo = 1;

@@ -26,7 +26,7 @@ import com.octest.banque.util.ServletUtility;
 
 /**
  *une servlet qui recevra la requÃªte pour effectuer
- * l'opÃ©ration et enverra la rÃ©ponse Ã  view (useregistration.jsp)
+ * l'operation et enverra la reponse a la� view (useregistration.jsp)
  * Servlet implementation class UserRegistrationCtl
  * une servlet qui obtiendra la requête pour effectuer l'opération(request) et enverra la réponse(answer) à view (registration.jsp).
  */
@@ -38,7 +38,7 @@ public class UserRegistrationCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(UserRegistrationCtl.class);
 
 	/**
-	 *Valider les donnÃ©es d'entrÃ©e saisies par l'utilisateur
+	 *Valider les donnees d'entree saisies par l'utilisateur
 	 */
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -82,7 +82,7 @@ public class UserRegistrationCtl extends BaseCtl {
 
 	/**
 	 * 
-	 *Remplit l'objet bean Ã  partir des paramÃ¨tres de la requÃªte
+	 *Remplit l'objet bean a� partir des parametres de la requete
 	 */
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {

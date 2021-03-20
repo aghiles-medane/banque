@@ -22,6 +22,7 @@ import com.octest.banque.util.ServletUtility;
 /**
  * Servlet implementation class BeneficiaryListCtl
  */
+@SuppressWarnings("serial")
 @WebServlet(name = "BeneficiaryListCtl", urlPatterns = { "/controlller/BeneficiaryListCtl" })
 public class BeneficiaryListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(BeneficiaryListCtl.class);
@@ -104,6 +105,7 @@ public class BeneficiaryListCtl extends BaseCtl {
 		log.debug("BeneficiaryListCtl doPost Start");
 		
 		
+		@SuppressWarnings("rawtypes")
 		List list = null;
 		int pageNo = DataUtility.getInt(request.getParameter("pageNo"));
 		int pageSize = DataUtility.getInt(request.getParameter("pageSize"));
