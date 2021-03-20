@@ -56,7 +56,9 @@
       <li class="nav-item">
         <a class="nav-link" href="<%=BSView.ACCOUNT_LIST_CTL%>">Account List</a>
       </li>
-      
+       <li class="nav-item">
+        <a class="nav-link" href="<%=BSView. MY_PROFILE_CTL %>">MyProfile</a>
+      </li>
       
       
       <li class="nav-item dropdown">
@@ -73,7 +75,9 @@
       
       <%}else if(userBean.getRoleId()==2){%>
        <li class="nav-item">
-        <a class="nav-link" href="<%=BSView.CUSTOMER_CTL%>">Customer Form</a>
+        
+       <a class="nav-link" href="<%=BSView.CUSTOMER_CTL%>">Customer Form</a>
+         
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,7 +90,11 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%=BSView.TRANSACTION_LIST_CTL%>">Consult History</a>
+         
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="<%=BSView. MY_PROFILE_CTL %>">MyProfile</a>
+            </li>
       <%} %>
       <%} %>
     </ul>

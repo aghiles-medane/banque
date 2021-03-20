@@ -20,20 +20,15 @@ public class UserBean extends BaseBean {
 	
     private String firstName;
     private String LastName;
-	public String getFirstName() {
-		return firstName;
+    private String MobileNo;
+	
+    
+	public String getMobileNo() {
+		return MobileNo;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return LastName;
-	}
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
+	public void setMobileNo(String mobileNo) {
+		MobileNo = mobileNo;
 	}
 
 	private String password;
@@ -64,6 +59,21 @@ public class UserBean extends BaseBean {
 		this.customer = customer;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return LastName;
+	}
+
+	public void setLastName(String lastName) {
+		LastName = lastName;
+	}
 	/**
 	 * @return Login id Of User
 	 */

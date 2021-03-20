@@ -115,9 +115,9 @@ public class MyProfileCtl extends BaseCtl
 		
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
-		//bean.setFirstName(DataUtility.getString(request.getParameter("firstName")));
-		//bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
-		//bean.setMobileNo(DataUtility.getString(request.getParameter("mobile")));
+		bean.setFirstName(DataUtility.getString(request.getParameter("firstName")));
+		bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
+	    bean.setMobileNo(DataUtility.getString(request.getParameter("mobile")));
 		
 		populateDTO(bean, request);
 	
@@ -191,11 +191,11 @@ public class MyProfileCtl extends BaseCtl
 			UserBean bean=(UserBean) populateBean(request);
 			try{
 				if(id>0){
-					/*
-					 * userBean.setFirstName(bean.getFirstName());
-					 * userBean.setLastName(bean.getLastName());
-					 * userBean.setMobileNo(bean.getMobileNo());
-					 */
+					
+					   userBean.setFirstName(bean.getFirstName());
+					  userBean.setLastName(bean.getLastName());
+					   userBean.setMobileNo(bean.getMobileNo());
+					 
 					
 		
 					model.update(userBean);

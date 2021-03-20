@@ -46,7 +46,7 @@
               <b><font color="Green"> <%=ServletUtility.getSuccessMessage(request)%>
                 </font></b>
                 		<div class="form-row">
-    							<%-- <div class="form-group col-md-6">
+    							 <div class="form-group col-md-6">
 								<input type="text" class="form-control"  name="firstName"
 									placeholder="First Name" value="<%=DataUtility.getStringData(bean.getFirstName())%>" > 
 									<font  color="red"><%=ServletUtility.getErrorMessage("firstName", request)%></font>
@@ -56,7 +56,7 @@
 									placeholder="Last Name" value="<%=DataUtility.getStringData(bean.getLastName())%>" > 
 									<font  color="red"><%=ServletUtility.getErrorMessage("lastName", request)%></font>
 							</div>
-							</div> --%>
+							</div> 
 							<div class="form-group">
 								<input type="text" class="form-control"  name="login" readonly="readonly"
 									placeholder="Login Id" value="<%=DataUtility.getStringData(bean.getLogin())%>" > 
@@ -64,11 +64,11 @@
 							</div>
 							
 							
-						<%-- 	<div class="form-group">
+							<div class="form-group">
 								<input type="text" class="form-control"  name="mobileNo"
 									placeholder="Mobile No." value="<%=DataUtility.getStringData(bean.getMobileNo())%>" > 
 									<font  color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font>
-							</div> --%>
+							</div>
 							
 							<%
 						
