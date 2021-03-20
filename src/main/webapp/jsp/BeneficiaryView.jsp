@@ -66,7 +66,14 @@
 							</font></b>
 							
 							<div class="form-group">
-								<input type="password" class="form-control"  name="accNo"
+								<input type="text" class="form-control"  name="name"
+									placeholder="Name"
+									value="<%=DataUtility.getStringData(bean.getName())%>">
+								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font>
+							</div>
+							
+							<div class="form-group">
+								<input type="text" class="form-control"  name="accNo"
 									placeholder="Beneficiary Account No"
 									value="<%=(bean.getAcc_No()>0)?bean.getAcc_No():""%>">
 								<font color="red"><%=ServletUtility.getErrorMessage("accNo", request)%></font>
@@ -79,12 +86,7 @@
 								<font color="red"><%=ServletUtility.getErrorMessage("confirmAccNo", request)%></font>
 							</div>
 							
-							<div class="form-group">
-								<input type="text" class="form-control"  name="name"
-									placeholder="Name"
-									value="<%=DataUtility.getStringData(bean.getName())%>">
-								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font>
-							</div>
+							
 							
 							<div class="form-group">
 								<input type="text" class="form-control"  name="bName"
@@ -93,12 +95,7 @@
 								<font color="red"><%=ServletUtility.getErrorMessage("bName", request)%></font>
 							</div>
 							
-							<div class="form-group">
-								<input type="text" class="form-control"  name="ifsc"
-									placeholder="IFSC Code"
-									value="<%=DataUtility.getStringData(bean.getBankName())%>">
-								<font color="red"><%=ServletUtility.getErrorMessage("ifsc", request)%></font>
-							</div>
+							
 							
 
 							<input type="submit" name="operation"

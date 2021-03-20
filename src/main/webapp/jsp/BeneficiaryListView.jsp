@@ -43,7 +43,7 @@
 		<li class="breadcrumb-item active" aria-current="page">Beneficiary Account List</li>
 	</ol>
 	</nav>
-<form action="<%=BSView.BENEFICIARY_LIST_CTL%>" method="post">
+<form action="<%=BSView.BENEFICIARY_LIST_VIEW%>" method="post">
 		<div id="feedback">
 			<div class="container">
 				<div class="col-md-9">

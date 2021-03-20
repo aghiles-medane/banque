@@ -30,7 +30,8 @@ public interface BSView {
 	public String ADMIN_TRANSACATION_VIEW = PAGE_FOLDER + "/AdminTransactionView.jsp";	
 	public String ADMIN_TRANSACTION_LIST_VIEW = PAGE_FOLDER + "/AdminTransactionListView.jsp";
 	
-	public String BENEFICIARY_VIEW = PAGE_FOLDER + "/BeneficiaryView.jsp";	
+	public String BENEFICIARY_VIEW = PAGE_FOLDER + "/BeneficiaryView.jsp";
+	
 	public String BENEFICIARY_LIST_VIEW = PAGE_FOLDER + "/BeneficiaryListView.jsp";
 	
 	public String LOGIN_VIEW = PAGE_FOLDER + "/LoginView.jsp";
