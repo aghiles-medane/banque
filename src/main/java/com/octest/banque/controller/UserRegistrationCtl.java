@@ -26,6 +26,7 @@ import com.octest.banque.util.ServletUtility;
 
 /**
  * Servlet implementation class UserRegistrationCtl
+ * une servlet qui obtiendra la requête pour effectuer l'opération(request) et enverra la réponse(answer) à view (registration.jsp).
  */
 
 @WebServlet(name = "UserRegistrationCtl", urlPatterns = { "/UserRegistrationCtl" })

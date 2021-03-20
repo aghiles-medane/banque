@@ -1,13 +1,13 @@
 package com.octest.banque.bean;
-
 import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * User JavaBean encapsulates TimeTable attributes
- * 
+ Les classes Bean sont utilisées pour définir et obtenir la valeur.
+ En d'autres termes,ce sont des classes getter et setter pour les attributs.
  * 
  */
+import java.util.Date;
 public class UserBean extends BaseBean {
 
 	/**
@@ -17,6 +17,8 @@ public class UserBean extends BaseBean {
 	/**
 	 * Password of User
 	 */
+	
+
 	private String password;
 	/**
 	 * Confirm Password of User
@@ -29,10 +31,13 @@ public class UserBean extends BaseBean {
 	/**
 	 * Customer of User
 	 */
+	
 	private CustomerBean customer;
 	
 		
+ 
 
+	
 
 	public CustomerBean getCustomer() {
 		return customer;

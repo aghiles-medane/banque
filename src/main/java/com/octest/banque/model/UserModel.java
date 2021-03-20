@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.sql.Timestamp;
 
 import org.apache.log4j.Logger;
 
@@ -21,6 +22,8 @@ import com.octest.banque.util.JDBCDataSource;
 
 /**
  * JDBC Implementation of UserModel
+ * UserModel contient toutes les Methodes liée aux transactions de base de données aux utilisateurs 
+ * Insert, Delete, Update. 
  * 
  */
 public class UserModel {
@@ -114,9 +117,12 @@ public class UserModel {
 		
 		Connection conn = null;
 		try {
+			   // Get connection:
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false); // Begin transaction
+			 // Create an object for executing SQL statements
 			PreparedStatement pstmt = conn.prepareStatement("DELETE FROM  USER WHERE ID=?");
+			// Setting parameters:
 			pstmt.setLong(1, bean.getId());
 			pstmt.executeUpdate();
 			conn.commit(); // End transaction
@@ -200,6 +206,7 @@ public class UserModel {
 			pstmt.setLong(1, pk);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
+				// Setting parameters:
 				bean = new UserBean();
 				bean.setId(rs.getLong(1));
 				bean.setLogin(rs.getString(2));
@@ -528,21 +535,7 @@ public class UserModel {
 
 		long pk = add(bean);
 
-		/*
-		 * HashMap<String, String> map = new HashMap<String, String>(); map.put("login",
-		 * bean.getLogin()); map.put("password", bean.getPassword());
-		 * 
-		 * String message = EmailBuilder.getUserRegistrationMessage(map);
-		 * 
-		 * EmailMessage msg = new EmailMessage();
-		 * 
-		 * msg.setTo(bean.getLogin());
-		 * msg.setSubject("Registration is successful for Placement Selection");
-		 * msg.setMessage(message); msg.setMessageType(EmailMessage.HTML_MSG);
-		 * 
-		 * try { EmailUtility.sendMail(msg); } catch (Exception e) {
-		 * e.printStackTrace(); }
-		 */
+	
 		return pk;
 	}
 
@@ -567,15 +560,7 @@ public class UserModel {
 			throw new RecordNotFoundException("Email ID does not exists !");
 
 		}
-		/*
-		 * HashMap<String, String> map = new HashMap<String, String>(); map.put("login",
-		 * userData.getLogin()); map.put("password", userData.getPassword()); String
-		 * message = EmailBuilder.getForgetPasswordMessage(map); EmailMessage msg = new
-		 * EmailMessage(); msg.setTo(login);
-		 * msg.setSubject("Banking System Your Password"); msg.setMessage(message);
-		 * msg.setMessageType(EmailMessage.HTML_MSG); EmailUtility.sendMail(msg); flag =
-		 * true;
-		 */
+		
 		return flag;
 	}
 }

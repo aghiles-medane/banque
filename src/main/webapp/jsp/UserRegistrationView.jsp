@@ -1,7 +1,8 @@
-
+<!-- directive de page pour l'importation des différents classes dont nous avons besoins dans cette jsp -->
 <%@page import="com.octest.banque.controller.UserRegistrationCtl"%>
 <%@page import="com.octest.banque.util.ServletUtility"%>
 <%@page import="com.octest.banque.util.DataUtility"%>
+<!-- directive de page indiquant le langage utilisée ainsi que le type de caractère utilisé pour la réponse HTTP -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,6 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>User Registration</title>
+<!-- permet d'utilisez toutes les fonctionnalités ou classes  de bootstrap -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -23,6 +25,7 @@
   </script>
 </head>
 <body>
+<!--  inclure la page JSP du header -->
 <%@ include file="Header.jsp" %>
 <br>
  <nav
@@ -55,18 +58,9 @@
                 
               <b><font color="Green"> <%=ServletUtility.getSuccessMessage(request)%>
                 </font></b>
-                		<%-- <div class="form-row">
-    							<div class="form-group col-md-6">
-								<input type="text" class="form-control"  name="firstName"
-									placeholder="First Name" value="<%=DataUtility.getStringData(bean.getFirstName())%>" > 
-									<font  color="red"><%=ServletUtility.getErrorMessage("firstName", request)%></font>
+                		
 							</div>
-        					<div class="form-group col-md-6">
-								<input type="text" class="form-control"  name="lastName"
-									placeholder="Last Name" value="<%=DataUtility.getStringData(bean.getLastName())%>" > 
-									<font  color="red"><%=ServletUtility.getErrorMessage("lastName", request)%></font>
 							</div>
-							</div> --%>
 							<div class="form-group">
 								<input type="text" class="form-control"  name="login"
 									placeholder="Login Id" value="<%=DataUtility.getStringData(bean.getLogin())%>" > 
@@ -101,6 +95,7 @@
 </div> </div> <!--feedback-->
 <br>
 
+       <!--  inclure la page JSP du "Footer" -->
 		<%@ include file="Footer.jsp"%>
 		
 </body>
