@@ -43,7 +43,7 @@
 		<li class="breadcrumb-item active" aria-current="page">Beneficiary Account List</li>
 	</ol>
 	</nav>
-<form action="<%=BSView.BENEFICIARY_LIST_VIEW%>" method="post">
+<form action="<%=BSView.BENEFICIARY_LIST_CTL%>" method="post">
 		<div id="feedback">
 			<div class="container">
 				<div class="col-md-9">
@@ -85,17 +85,12 @@
 		<tbody>
 				<%
 				
-					
-				    int pageNo = ServletUtility.getPageNo(request);
-			    	int pageSize = ServletUtility.getPageSize(request);
-			    	int size=(int)request.getAttribute("size");
-			     	int index = ((pageNo - 1) * pageSize) + 1;
+					int pageNo = ServletUtility.getPageNo(request);
+					int pageSize = ServletUtility.getPageSize(request);
+					int index = ((pageNo - 1) * pageSize) + 1;
 					BeneficiaryBean bean = null;
-					
 					List list = ServletUtility.getList(request);
-					
 					Iterator<BeneficiaryBean> it = list.iterator();
-					
 					while (it.hasNext()) {
 						bean = it.next();
 				%>
@@ -105,7 +100,6 @@
 				<td><%=bean.getAcc_No()%></td>
 				<td><%=bean.getName()%></td>
 				<td><%=bean.getBankName()%></td>
-			
 				<td>
 					<a class="btn btn-primary pull-right"  href="TransactionCtl?acN=<%=bean.getAcc_No()%>">Pay</a>
 				</td>
@@ -124,10 +118,12 @@
 						value="<%=BeneficiaryListCtl.OP_PREVIOUS%>"
 						<%=(pageNo == 1) ? "disabled" : ""%>></td>
 						
-					
+					<%
+						BeneficiaryModel model = new BeneficiaryModel();
+					%>
 					<td align="right"><input type="submit" name="operation" class="btn btn-primary pull-right" 
 						value="<%=BeneficiaryListCtl.OP_NEXT%>"
-						<%=((list.size() < pageSize) ||pageNo*pageSize==size) ? "disabled" : ""%>></td>
+						<%=((list.size() < pageSize) || model.nextPK() - 1 == bean.getId()) ? "disabled" : ""%>></td>
 				</tr>
 			</table>
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input

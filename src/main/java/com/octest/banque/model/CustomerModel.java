@@ -313,17 +313,15 @@ public class CustomerModel {
 		
 		CustomerBean beanExist = findByPK(bean.getId());
 		
-		/*
-		 * CustomerBean beanExist = findByLogin(bean.getLogin()); if (beanExist != null
-		 * && !(beanExist.getId() == bean.getId())) { throw new
-		 * DuplicateRecordException("LoginId is already exist"); }
-		 */
+		
+		  
+		 
 		try {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false); // Begin transaction
 			PreparedStatement pstmt = conn.prepareStatement(
-					"UPDATE Customer SET ACC_NO=?,NAME=?,EMAILID=?,MobileNO=?,Address=?,USERID=?,"
-						+ "CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?");
+					"UPDATE Account SET ACC_NO=?,openDate=?,Balance=?,OverDraftLimit=?,accType=?,IntrestRate=?,"
+							+ "CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?");
 			pstmt.setLong(1, beanExist.getAcc_No());
 			pstmt.setString(2, bean.getName());
 			pstmt.setString(3, bean.getEmailId());
