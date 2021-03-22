@@ -115,7 +115,7 @@ public abstract class BaseCtl extends HttpServlet
 		if (userbean == null) {
 			// If record is created without login
 			createdBy = "root";
-			modifiedBy = "root";
+			modifiedBy = "azertyui";
 		} else {
 
 			modifiedBy = userbean.getLogin();

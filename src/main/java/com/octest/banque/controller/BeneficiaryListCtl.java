@@ -22,16 +22,16 @@ import com.octest.banque.util.ServletUtility;
 /**
  * Servlet implementation class BeneficiaryListCtl
  */
-@SuppressWarnings("serial")
-@WebServlet(name = "BeneficiaryListCtl", urlPatterns = { "/controlller/BeneficiaryListCtl" })
+
+@WebServlet(name = "BeneficiaryListCtl", urlPatterns = { "/controller/BeneficiaryListCtl" })
 public class BeneficiaryListCtl extends BaseCtl {
 	private static Logger log = Logger.getLogger(BeneficiaryListCtl.class);
 	/**
-	 * Populates bean object from request parameters
-	 * 
-	 * @param request
-	 * @return
-	 */
+	* Populates bean object from request parameters
+	* 
+	* @param request
+	* @return
+	*/
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
 		log.debug("BeneficiaryListCtl populateBean method start");
@@ -42,13 +42,13 @@ public class BeneficiaryListCtl extends BaseCtl {
 	}
 
 	/**
-	 * Contains Display logics
-	 */
+	* Contains Display logics
+	*/
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	*      response)
+	*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("BeneficiaryListCtl doGet Start");
@@ -67,18 +67,11 @@ public class BeneficiaryListCtl extends BaseCtl {
 
 		BeneficiaryModel model = new BeneficiaryModel();
 		try {
-			
-			UserBean uBean=(UserBean)request.getSession().getAttribute("user");
-			if(uBean.getRoleId()==2) {
-				bean.setUserId(uBean.getId());
-			}
-			
 			list = model.search(bean, pageNo, pageSize);
 			if (list == null || list.size() == 0) {
 				ServletUtility.setErrorMessage("No record found ", request);
 			}
 			ServletUtility.setList(list, request);
-			ServletUtility.setSize(model.search(bean).size(), request);
 			ServletUtility.setPageNo(pageNo, request);
 			ServletUtility.setPageSize(pageSize, request);
 			ServletUtility.forward(getView(), request, response);
@@ -91,21 +84,20 @@ public class BeneficiaryListCtl extends BaseCtl {
 	}
 
 	/**
-	 * Contains Submit logics
-	 */
+	* Contains Submit logics
+	*/
 	@Override
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	*      response)
+	*/
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		log.debug("BeneficiaryListCtl doPost Start");
 		
 		
-		@SuppressWarnings("rawtypes")
 		List list = null;
 		int pageNo = DataUtility.getInt(request.getParameter("pageNo"));
 		int pageSize = DataUtility.getInt(request.getParameter("pageSize"));
@@ -153,11 +145,7 @@ public class BeneficiaryListCtl extends BaseCtl {
 				return;
 
 			}
-				
-			UserBean uBean=(UserBean)request.getSession().getAttribute("user");
-			if(uBean.getRoleId()==2) {
-				bean.setUserId(uBean.getId());
-			}
+
 			list = model.search(bean, pageNo, pageSize);
 			
 			
@@ -165,7 +153,6 @@ public class BeneficiaryListCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("No record found ", request);
 			}
 			ServletUtility.setList(list, request);
-			ServletUtility.setSize(model.search(bean).size(), request);
 			ServletUtility.setPageNo(pageNo, request);
 			ServletUtility.setPageSize(pageSize, request);
 			ServletUtility.forward(getView(), request, response);
@@ -180,10 +167,10 @@ public class BeneficiaryListCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
-	 * 
-	 * @return
-	 */
+	* Returns the VIEW page of this Controller
+	* 
+	* @return
+	*/
 	@Override
 	protected String getView() {
 		return BSView.BENEFICIARY_LIST_VIEW;

@@ -66,13 +66,6 @@
 							</font></b>
 							
 							<div class="form-group">
-								<input type="text" class="form-control"  name="name"
-									placeholder="Name"
-									value="<%=DataUtility.getStringData(bean.getName())%>">
-								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font>
-							</div>
-							
-							<div class="form-group">
 								<input type="text" class="form-control"  name="accNo"
 									placeholder="Beneficiary Account No"
 									value="<%=(bean.getAcc_No()>0)?bean.getAcc_No():""%>">
@@ -86,7 +79,12 @@
 								<font color="red"><%=ServletUtility.getErrorMessage("confirmAccNo", request)%></font>
 							</div>
 							
-							
+							<div class="form-group">
+								<input type="text" class="form-control"  name="name"
+									placeholder="Name"
+									value="<%=DataUtility.getStringData(bean.getName())%>">
+								<font color="red"><%=ServletUtility.getErrorMessage("name", request)%></font>
+							</div>
 							
 							<div class="form-group">
 								<input type="text" class="form-control"  name="bName"
@@ -94,7 +92,6 @@
 									value="<%=DataUtility.getStringData(bean.getBankName())%>">
 								<font color="red"><%=ServletUtility.getErrorMessage("bName", request)%></font>
 							</div>
-							
 							
 							
 

@@ -173,8 +173,23 @@ public class TransactionCtl extends BaseCtl {
 				bean.setToAccountNo(acNo);
 				bean.setFromAccountNo(acBean.getAcc_No());
 				bean.setTrasactionId(DataUtility.getRandom());
+				
+				
 				acBean.setBalance(acBean.getBalance() - bean.getTransactionAmount());
+				
+				
+				//cBean.setBalance(cBean.getBalance() + bean.getTransactionAmount());
+				
+				
+				
+				//new AccountModel().update(cBean);
+				
+				
 				new AccountModel().update(acBean);
+				
+				
+				
+				
 				long pk = model.add(bean);
 				session.setAttribute("tbean", bean);
 				ServletUtility.setSuccessMessage("Transaction Done Successfully", request);

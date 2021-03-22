@@ -31,16 +31,18 @@ import com.octest.banque.util.ServletUtility;
  */
 
 @WebServlet(name = "BeneficiaryCtl", urlPatterns = { "/controller/BeneficiaryCtl" })
+
+
 public class BeneficiaryCtl extends BaseCtl {
 
 	private static Logger log = Logger.getLogger(BeneficiaryCtl.class);
 
 	/**
-	 * Validate input Data Entered By Beneficiary
-	 * 
-	 * @param request
-	 * @return
-	 */
+	* Validate input Data Entered By Beneficiary
+	* 
+	* @param request
+	* @return
+	*/
 
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -63,6 +65,13 @@ public class BeneficiaryCtl extends BaseCtl {
 			pass = false;
 		}
 
+		if (DataValidator.isNull(request.getParameter("bName"))) {
+			request.setAttribute("bName", PropertyReader.getValue("error.require", "Bank Name"));
+			pass = false;
+		}
+
+		
+
 		if (!request.getParameter("accNo").equals(request.getParameter("confirmAccNo"))
 				&& !"".equals(request.getParameter("confirmAccNo"))) {
 			
@@ -76,11 +85,11 @@ public class BeneficiaryCtl extends BaseCtl {
 	}
 
 	/**
-	 * Populates bean object from request parameters
-	 * 
-	 * @param request
-	 * @return
-	 */
+	* Populates bean object from request parameters
+	* 
+	* @param request
+	* @return
+	*/
 
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
@@ -99,17 +108,17 @@ public class BeneficiaryCtl extends BaseCtl {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+	* @see HttpServlet#HttpServlet()
+	*/
 
 	/**
-	 * Contains display logic
-	 */
+	* Contains display logic
+	*/
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	*      response)
+	*/
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -136,13 +145,13 @@ public class BeneficiaryCtl extends BaseCtl {
 	}
 
 	/**
-	 * Contains submit logic
-	 */
+	* Contains submit logic
+	*/
 
 /**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	*      response)
+	*/
 
   
   
@@ -161,14 +170,14 @@ public class BeneficiaryCtl extends BaseCtl {
 			try {
 				UserBean uBean=(UserBean)request.getSession().getAttribute("user");
 				bean.setUserId(uBean.getId());
-				 if (id > 0) {
+				if (id > 0) {
 	                    model.update(bean);
 	                    ServletUtility.setSuccessMessage("Data is successfully Updated", request);
 	                } else {
 	                    long pk = model.add(bean);
 	                    ServletUtility.setSuccessMessage("Data is successfully saved",request);
 	                }
-				 ServletUtility.setBean(bean, request);
+				ServletUtility.setBean(bean, request);
 			} catch (DuplicateRecordException e) {
 				log.error(e);
 				ServletUtility.setBean(bean, request);
@@ -189,13 +198,14 @@ public class BeneficiaryCtl extends BaseCtl {
 	}
 
 	/**
-	 * Returns the VIEW page of this Controller
-	 * 
-	 * @return
-	 */
+	* Returns the VIEW page of this Controller
+	* 
+	* @return
+	*/
 	@Override
 	protected String getView() {
 		return BSView.BENEFICIARY_VIEW;
 	}
 
 }
+
